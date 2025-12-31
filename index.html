@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICLR 2026 Workshop on Recursive Self-Improvement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f1e5;
+      --text: #2c1a0f;
+      --muted: #6f4f3a;
+      --card: #fff8ed;
+      --line: #e6d8c8;
+      --accent: #c26a2e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+    a { color: inherit; }
+
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 32px 56px 110px;
+      background-color: var(--card);
+      background-image: url('assets/bg.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right top;
+    }
+    .shape-cloud {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .shape {
+      position: absolute;
+      opacity: 0.12;
+      filter: blur(0px);
+      mix-blend-mode: screen;
+      animation: float 16s ease-in-out infinite;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,199,148,0.22), rgba(211,119,64,0.2));
+    }
+    .shape.alt { background: linear-gradient(135deg, rgba(248,180,141,0.2), rgba(201,98,77,0.24)); }
+    .shape.s1 { width: 220px; height: 220px; top: -40px; left: 10%; animation-duration: 17s; }
+    .shape.s2 { width: 160px; height: 160px; top: 40px; left: 30%; animation-duration: 13s; animation-delay: -2s; }
+    .shape.s3 { width: 240px; height: 240px; top: -60px; right: 14%; animation-duration: 19s; animation-delay: -4s; }
+    .shape.s4 { width: 180px; height: 180px; top: 120px; right: 26%; animation-duration: 15s; animation-delay: -6s; }
+    .shape.s5 { width: 280px; height: 280px; bottom: 40%; left: 18%; animation-duration: 21s; animation-delay: -3s; }
+    .shape.s6 { width: 200px; height: 200px; bottom: 46%; right: 8%; animation-duration: 16s; animation-delay: -5s; }
+
+    @keyframes float {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(0,12px,0) scale(1.04); }
+      100% { transform: translate3d(0,0,0) scale(1); }
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-right: 140px;
+      margin-top: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.25));
+      border-radius: 10px;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      opacity: 0.94;
+    }
+    nav a:hover { opacity: 1; }
+    .iclr-badge {
+      position: absolute;
+      top: 44px;
+      right: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .iclr-badge:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(0,0,0,0.16); }
+    .iclr-badge img {
+      height: 42px;
+      display: block;
+    }
+
+    .hero-text {
+      max-width: 520px;
+      margin-top: 170px;
+    }
+    .hero-panel h2 { margin: 0 0 12px; }
+    .hero-panel p { margin: 0; color: #111827; font-weight: 600; }
+
+    .date-pill {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(186, 109, 57, 0.16);
+      color: #4d2a17;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      max-width: 460px;
+      white-space: normal;
+      line-height: 1.4;
+    }
+
+    .hero-cta {
+      position: absolute;
+      right: 56px;
+      bottom: 40px;
+    }
+    .hero-text h2 {
+      margin: 0 0 18px;
+      font-size: clamp(44px, 6.5vw, 64px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+    }
+    .accent-word {
+      display: inline-block;
+      margin: 0 2px;
+      padding: 0 1px 2px;
+      line-height: 1.12;
+      background-image: linear-gradient(120deg, #2c1a0f 0%, #0f0f0f 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .accent-infinity {
+      position: relative;
+      top: 0.04em;
+      font-size: 1.02em;
+      letter-spacing: 0;
+      background: none !important;
+      background-image: none !important;
+      color: #e25512 !important;
+      -webkit-text-fill-color: #e25512 !important;
+      text-shadow: none;
+    }
+    .accent-ai {
+      background: none !important;
+      color: #e25512 !important;
+      -webkit-text-fill-color: #e25512 !important;
+      text-shadow: none;
+    }
+    .hero-text p {
+      margin: 28px 0 0;
+      font-size: 18px;
+    }
+    .badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.26);
+      backdrop-filter: blur(8px);
+      font-weight: 700;
+      letter-spacing: 0.1px;
+    }
+
+    .content-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 24px 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .section {
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section h3 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      letter-spacing: -0.2px;
+    }
+    .section p { margin: 8px 0; color: var(--muted); font-size: 18px; text-align: justify; }
+    .section ul { margin: 10px 0 0 0; color: var(--muted); font-size: 17px; padding-left: 18px; text-align: justify; }
+    .section ul li { margin-bottom: 8px; }
+    .pill {
+      display: inline-block;
+      background: #f3e1c8;
+      color: #a3562c;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      margin: 12px 0;
+    }
+    .dates strong { color: var(--text); }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 14px 0 4px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.1px;
+      color: #fff;
+      background: #8c1b16; /* OpenReview brand red */
+      box-shadow: 0 12px 28px rgba(140, 27, 22, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(140, 27, 22, 0.3); }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .person {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+    .avatar {
+      width: 140px;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      border: 2px solid #fff;
+      background: #fff;
+    }
+    .person .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .person .name { font-weight: 700; font-size: 15px; }
+    .person .aff { color: var(--muted); font-size: 14px; }
+
+    .partners {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      align-items: center;
+      justify-items: start;
+    }
+    .partner {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      text-align: left;
+    }
+    .partner img {
+      max-width: 220px;
+      max-height: 80px;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding: 18px 24px 52px; min-height: 62vh; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .brand h1 { font-size: 20px; }
+      nav { width: 100%; justify-content: flex-start; }
+      .topbar { padding-right: 0; }
+      .hero-text { margin-top: 120px; text-shadow: 0 6px 18px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.16); }
+      .hero-cta { position: static; margin-top: 18px; }
+    }
+    @media (max-width: 560px) {
+      .brand img { width: 56px; height: 56px; }
+      .hero-text h2 { font-size: 34px; }
+      .content-wrap { padding: 36px 18px 90px; }
+      .hero-text { margin-top: 90px; text-shadow: 0 4px 12px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.16); }
+      .hero-cta { position: static; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <a class="iclr-badge" href="https://iclr.cc" target="_blank" rel="noopener">
+      <img src="assets/photos/iclr.png" alt="ICLR logo">
+    </a>
+    <div class="shape-cloud" aria-hidden="true">
+      <div class="shape s1"></div>
+      <div class="shape s2 alt"></div>
+      <div class="shape s3"></div>
+      <div class="shape s4 alt"></div>
+      <div class="shape s5"></div>
+      <div class="shape s6 alt"></div>
+    </div>
+    <div class="topbar">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Recursive 2026 logo">
+        <h1>ICLR 2026 Workshop: AI with Recursive Self-Improvement</h1>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#submission">Submission</a>
+        <!-- <a href="#data">Data</a> -->
+        <a href="#dates">Dates</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#partners">Sponsors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="hero-text">
+      <h2>Design the<br> <span class="accent-word">l<span class="accent-infinity">∞</span>ps</span>,<br>Prove the<br><span class="accent-word">g<span class="accent-ai">ai</span>ns</span>.</h2>
+      <p class="date-pill">🗓️ April 23–27<br>Rio de Janeiro, Brazil<br>Co-located with ICLR 2026</p>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="https://openreview.net" target="_blank" rel="noopener">Submit on OpenReview</a>
+    </div>
+  </header>
+
+  <main class="content-wrap">
+    <section id="about" class="section">
+      <p><strong>Bem-vindos! We’re the ICLR 2026 Workshop on AI with Recursive Self-Improvement (Recursive 2026)</strong>, co-located with ICLR 2026 in Rio de Janeiro (April 23–27, 2026; workshop day April 26 or 27).</p>
+      <p>Recursive self-improvement is no longer a speculative vision—it is becoming a concrete systems problem.
+        Across text, speech, vision, and embodied interaction, today’s models can already diagnose their failures, critique their behavior, update internal representations, and modify external tools. What’s missing is not ambition, but principled methods, system designs, and evaluations that turn self-improvement into something measurable, reliable, and deployable.
+        <br><br>
+        This workshop brings together researchers working on recursive self-improving AI across omni-models, multimodal agents, robotics, and scientific discovery—grounded in today’s practical advances, from critique- and reward-driven learning to test-time adaptation, experience accumulation, and governed model updates.</p>
+    </section>
+
+    <section class="section">
+      <h3>Call for Papers</h3>
+      <p>We’re looking for methods, systems, and evaluations that move self-improving AI from promise to practice across language, speech, and vision, as well as applications in robotics and scientific discovery.
+        We frame contributions through five lenses: (1) change targets (parameters, world models, memory, tools/code, architectures), (2) timing (from in-episode adaptation to post-deployment updates), (3) mechanisms (reward or critique, imitation, evolutionary search), (4) contexts (web/UI, game, robotics, science, enterprise), and (5) alignment and security (long-horizon stability, regression risk); and (6) evaluation and benchmarks. We also welcome work on optimization and curricula, memory and model editing, instrumentation and rollback.</p>
+    
+    </section>
+
+    <section id="dates" class="section">
+      <h3>Important Dates (AoE)</h3>
+      <ul class="dates">
+        <li>Paper submission opens: <strong>January 1, 2026</strong></li>
+        <li>Paper submission deadline: <strong>January 30, 2026</strong></li>
+        <li>Review deadline for reviewers: <strong>February 23, 2026</strong></li>
+        <li>Author notification: <strong>March 1, 2026</strong></li>
+        <li>Camera-ready deadline: <strong>March 9, 2026</strong></li>
+        <li>Workshop day: <strong>April 26 or 27, 2026</strong></li>
+      </ul>
+    </section>
+
+    <section id="submission" class="section">
+      <h3>Submission Instructions</h3>
+      <p>Submissions must be made through OpenReview and formatted using the ICLR conference proceedings style.</p>
+      <ul>
+        <li><strong>Main Track:</strong> Up to 8 pages, excluding references.</li>
+        <li><strong>Tiny Papers Track:</strong> Up to 5 pages total, including references.</li>
+        <li>All accepted papers will be presented in an extended poster session; a small number will be selected for spotlight oral presentations.</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn" href="https://openreview.net" target="_blank" rel="noopener">Submit on OpenReview</a>
+      </div>
+    </section>
+
+    <section id="awards" class="section">
+      <h3>Awards 🏆</h3>
+      <p>We will present two Best Paper Awards and three Outstanding Awards, selected by the program committee.</p>
+    </section>
+
+    <section id="speakers" class="section">
+      <h3>Speakers &amp; Panelists</h3>
+      <div class="people-grid">
+        <div class="person"><img class="avatar" src="assets/photos/arman.jpeg" alt="Arman Cohan"><div class="meta"><span class="name">Arman Cohan</span><span class="aff">Yale University</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/bang.jpeg" alt="Bang Liu"><div class="meta"><span class="name">Bang Liu</span><span class="aff">Université de Montréal / Mila</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/chelsa.jpg" alt="Chelsea Finn"><div class="meta"><span class="name">Chelsea Finn</span><span class="aff">Stanford University</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/neubig.jpg" alt="Graham Neubig"><div class="meta"><span class="name">Graham Neubig</span><span class="aff">OpenHands / Carnegie Mellon University</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/matej.jpeg" alt="Matej Balog"><div class="meta"><span class="name">Matej Balog</span><span class="aff">Google DeepMind</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/su.jpeg" alt="Yu Su"><div class="meta"><span class="name">Yu Su</span><span class="aff">Ohio State University</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/yd.jpeg" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Independant Researcher</span></div></div>
+      </div>
+    </section>
+
+    <section id="organizers" class="section">
+      <h3>Committee (organizers & executors)</h3>
+      <div class="people-grid">
+        <div class="person"><img class="avatar" src="assets/photos/mingchen.jpg" alt="Mingchen Zhuge"><div class="meta"><span class="name">Mingchen Zhuge</span><span class="aff">KAUST</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/ailing.jpeg" alt="Ailing Zeng"><div class="meta"><span class="name">Ailing Zeng</span><span class="aff">Anuttacon</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/deyao.jpg" alt="Deyao Zhu"><div class="meta"><span class="name">Deyao Zhu</span><span class="aff">ByteDance</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/sy.jpeg" alt="Sherry Yang"><div class="meta"><span class="name">Sherry Yang</span><span class="aff">NYU / DeepMind</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/yz.png" alt="Yunzhong He"><div class="meta"><span class="name">Yunzhong He</span><span class="aff">Scale</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/vikas.jpeg" alt="Vikas Chandra"><div class="meta"><span class="name">Vikas Chandra</span><span class="aff">Meta Reality Labs</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/js.jpg" alt="Jürgen Schmidhuber"><div class="meta"><span class="name">Jürgen Schmidhuber</span><span class="aff">KAUST / IDSIA</span></div></div>
+      </div>
+    </section>
+
+    <section id="partners" class="section">
+      <h3>Sponsors</h3>
+      <div class="partners">
+        <div class="partner"><img src="assets/photos/01_Tencent_J_Standard Logo.png" alt="Tencent"></div>
+        <!-- <div class="partner"><img src="assets/photos/KAUST-logo.jpg" alt="KAUST"></div> -->
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h3>Contact</h3>
+      <p>Questions? Reach us at <a href="mailto:mczhuge@gmail.com">mczhuge@gmail.com, ailingzengzzz@gmail.com</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
