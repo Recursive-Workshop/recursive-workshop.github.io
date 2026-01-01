@@ -235,6 +235,11 @@
       font-size: 26px;
       letter-spacing: -0.2px;
     }
+    .section h3 .subtle {
+      font-size: 0.78em;
+      font-weight: 600;
+      color: var(--muted);
+    }
     .section p { margin: 8px 0; color: var(--muted); font-size: 18px; text-align: justify; }
     .section ul { margin: 10px 0 0 0; color: var(--muted); font-size: 17px; padding-left: 18px; text-align: justify; }
     .section ul li { margin-bottom: 8px; }
@@ -306,22 +311,25 @@
     .person .aff { color: var(--muted); font-size: 14px; }
 
     .partners {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 16px;
-      align-items: center;
-      justify-items: start;
+      align-items: stretch;
+      justify-content: flex-start;
     }
     .partner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 12px;
       border: 1px solid var(--line);
       border-radius: 12px;
       background: #fff;
-      text-align: left;
+      min-height: 120px;
     }
     .partner img {
-      max-width: 220px;
-      max-height: 80px;
+      max-width: 260px;
+      max-height: 84px;
       object-fit: contain;
       display: block;
       margin: 0;
@@ -415,7 +423,7 @@
     </section>
 
     <section id="speakers" class="section">
-      <h3>Speakers &amp; Panelists</h3>
+      <h3>Speakers &amp; Panelists <span class="subtle">(alphabetical order)</span></h3>
       <div class="people-grid">
         <div class="person"><img class="avatar" src="assets/photos/arman.jpeg" alt="Arman Cohan"><div class="meta"><span class="name">Arman Cohan</span><span class="aff">Yale University</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/bang.jpeg" alt="Bang Liu"><div class="meta"><span class="name">Bang Liu</span><span class="aff">Université de Montréal / Mila</span></div></div>
@@ -423,12 +431,12 @@
         <div class="person"><img class="avatar" src="assets/photos/neubig.jpg" alt="Graham Neubig"><div class="meta"><span class="name">Graham Neubig</span><span class="aff">OpenHands / Carnegie Mellon University</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/matej.jpeg" alt="Matej Balog"><div class="meta"><span class="name">Matej Balog</span><span class="aff">Google DeepMind</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/su.jpeg" alt="Yu Su"><div class="meta"><span class="name">Yu Su</span><span class="aff">Ohio State University</span></div></div>
-        <div class="person"><img class="avatar" src="assets/photos/yd.jpeg" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Independant Researcher</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span></div></div>
       </div>
     </section>
 
     <section id="organizers" class="section">
-      <h3>Committee (organizers & executors)</h3>
+      <h3>Committee <span class="subtle">(organizers & executors)</span></h3>
       <div class="people-grid">
         <div class="person"><img class="avatar" src="assets/photos/mingchen.jpg" alt="Mingchen Zhuge"><div class="meta"><span class="name">Mingchen Zhuge</span><span class="aff">KAUST</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/ailing.jpeg" alt="Ailing Zeng"><div class="meta"><span class="name">Ailing Zeng</span><span class="aff">Anuttacon</span></div></div>
@@ -444,6 +452,7 @@
       <h3>Sponsors</h3>
       <div class="partners">
         <div class="partner"><img src="assets/photos/01_Tencent_J_Standard Logo.png" alt="Tencent"></div>
+        <div class="partner"><img src="assets/photos/meta_logo.png" alt="Meta"></div>
         <!-- <div class="partner"><img src="assets/photos/KAUST-logo.jpg" alt="KAUST"></div> -->
       </div>
     </section>
