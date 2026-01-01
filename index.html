@@ -98,10 +98,14 @@
     nav {
       display: flex;
       gap: 18px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       font-weight: 700;
       font-size: 15px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
     }
+    nav::-webkit-scrollbar { display: none; }
     nav a {
       text-decoration: none;
       color: var(--text);
