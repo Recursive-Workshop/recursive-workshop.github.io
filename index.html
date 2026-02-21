@@ -337,6 +337,57 @@
       margin: 0;
     }
 
+    .schedule-wrap {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow-x: auto;
+      background: #fff;
+    }
+    .schedule-table {
+      width: 100%;
+      min-width: 880px;
+      border-collapse: collapse;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .schedule-table th,
+    .schedule-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .schedule-table thead th {
+      background: #f3e7d6;
+      color: #2c1a0f;
+      font-size: 15px;
+      letter-spacing: 0.1px;
+    }
+    .schedule-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .schedule-table td.time {
+      white-space: nowrap;
+      font-weight: 700;
+      color: #3f2b1e;
+    }
+    .schedule-table tr.break-row td {
+      background: #faf3e6;
+    }
+    .schedule-table tr.lunch-row td {
+      background: #efe4cf;
+      font-weight: 700;
+    }
+    .schedule-table tr.session-row td {
+      background: #f3e7d6;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 13px;
+      color: #5a3c27;
+    }
+
   </style>
 </head>
 <body>
@@ -362,6 +413,7 @@
         <a href="#submission">Submission</a>
         <!-- <a href="#data">Data</a> -->
         <a href="#dates">Dates</a>
+        <a href="#schedule">Schedule</a>
         <a href="#speakers">Speakers</a>
         <a href="#organizers">Organizers</a>
         <a href="#partners">Sponsors</a>
@@ -402,9 +454,9 @@
 		      </ul>
 		    </section>
 
-	    <section id="submission" class="section">
-	      <h3>Submission Instructions</h3>
-	      <p>Submissions must be made through OpenReview and formatted using the ICLR conference proceedings style.</p>
+    <section id="submission" class="section">
+      <h3>Submission Instructions</h3>
+      <p>Submissions must be made through OpenReview and formatted using the ICLR conference proceedings style.</p>
 	      <ul>
         <li><strong>Main Track:</strong> Up to 8 pages, excluding references.</li>
         <li><strong>Tiny Papers Track:</strong> Up to 5 pages total, including references.</li>
@@ -413,10 +465,119 @@
       </ul>
 	      <p>Both tracks are non-archival. Accepted tiny papers may be featured on the workshop website. The reviewing process is single-blind and managed through OpenReview; 
 	        AI-generated papers are not allowed, however, due to the nature of the workshop, AI-generated artifacts used as part of the work (e.g., demos, systems, or experiments) are allowed, but must be clearly disclosed, and papers must follow the <a href="https://blog.iclr.cc/2025/08/26/policies-on-large-language-model-usage-at-iclr-2026/" target="_blank" rel="noopener">Policies on Large Language Model Usage at ICLR 2026</a>, including the disclosure of LLM usage.</p>
-	      <div class="cta-row">
-	        <a class="btn" href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/RSI" target="_blank" rel="noopener">Submit on OpenReview</a>
-	      </div>
-	    </section>
+      <div class="cta-row">
+        <a class="btn" href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/RSI" target="_blank" rel="noopener">Submit on OpenReview</a>
+      </div>
+    </section>
+
+    <section id="schedule" class="section">
+      <h3>Schedule <span class="subtle">(tentative, all talks include Q&amp;A)</span></h3>
+      <p>All invited speaker slots are 30 minutes. Oral spotlights are 10 minutes each. Times below are in BRT (Rio).</p>
+      <div class="schedule-wrap">
+        <table class="schedule-table" aria-label="Tentative workshop schedule">
+          <thead>
+            <tr>
+              <th>Time (BRT)</th>
+              <th>Session</th>
+              <th>Speaker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="session-row">
+              <td colspan="3">Morning Session</td>
+            </tr>
+            <tr>
+              <td class="time">08:50 - 09:00</td>
+              <td>Opening Remarks</td>
+              <td>Organizers</td>
+            </tr>
+            <tr>
+              <td class="time">09:00 - 09:30</td>
+              <td>Invited Talk 1</td>
+              <td>Yu Su (Ohio State University)</td>
+            </tr>
+            <tr>
+              <td class="time">09:30 - 10:00</td>
+              <td>Invited Talk 2</td>
+              <td>Arman Cohan</td>
+            </tr>
+            <tr class="break-row">
+              <td class="time">10:00 - 10:30</td>
+              <td>Coffee Break &amp; Networking</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td class="time">10:30 - 11:00</td>
+              <td>Invited Talk 3</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td class="time">11:00 - 11:30</td>
+              <td>Oral Session I (3 talks, 10 minutes each)</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td class="time">11:30 - 12:00</td>
+              <td>Invited Talk 4</td>
+              <td>TBA</td>
+            </tr>
+            <tr class="lunch-row">
+              <td class="time">12:00 - 13:10</td>
+              <td>Lunch &amp; Networking</td>
+              <td></td>
+            </tr>
+            <tr class="session-row">
+              <td colspan="3">Afternoon Session</td>
+            </tr>
+            <tr>
+              <td class="time">13:10 - 13:40</td>
+              <td>Invited Talk 5</td>
+              <td>Yuandong Tian</td>
+            </tr>
+            <tr>
+              <td class="time">13:40 - 14:10</td>
+              <td>Invited Talk 6</td>
+              <td>Matej Balog</td>
+            </tr>
+            <tr class="break-row">
+              <td class="time">14:10 - 14:40</td>
+              <td>Coffee Break &amp; Networking</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td class="time">14:40 - 15:10</td>
+              <td>Invited Talk 7</td>
+              <td>Bang Liu</td>
+            </tr>
+            <tr>
+              <td class="time">15:10 - 15:40</td>
+              <td>Oral Session II (3 talks, 10 minutes each)</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td class="time">15:40 - 16:00</td>
+              <td>Poster Session / Networking</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td class="time">16:00 - 16:30</td>
+              <td>Invited Talk 8</td>
+              <td>Graham Neubig (Carnegie Mellon University / All Hand AI)</td>
+            </tr>
+            <tr>
+              <td class="time">16:30 - 17:20</td>
+              <td>Panel Discussion (Afternoon Closing Session)</td>
+              <td>All available invited speakers</td>
+            </tr>
+            <tr>
+              <td class="time">17:20 - 17:30</td>
+              <td>Closing Remarks</td>
+              <td>Organizers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <section id="awards" class="section">
       <h3>Awards 🏆</h3>
