@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accepted Papers | ICLR 2026 Workshop RSI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f1e5;
+      --text: #2c1a0f;
+      --muted: #6f4f3a;
+      --line: #e6d8c8;
+      --link: #8c1b16;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    .top {
+      position: relative;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      padding-right: 180px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+    .sub {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .accepted-note {
+      margin: 8px 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--link);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 700;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: var(--link);
+      color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      line-height: 1;
+    }
+    .nav a.home-link {
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav a.home-link:hover {
+      color: #fff;
+      text-decoration: none;
+      filter: brightness(0.94);
+    }
+    .nav a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      margin-top: 24px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .section-head span {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .paper-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+    .paper-list li {
+      margin: 8px 0;
+    }
+    .paper-id {
+      color: var(--muted);
+      font-weight: 700;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+    .paper-list a {
+      color: var(--text);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .paper-list a:hover {
+      color: var(--link);
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      .top {
+        padding-right: 0;
+      }
+      .nav {
+        position: static;
+        margin-top: 10px;
+      }
+      h1 { font-size: 28px; }
+      .section-head h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Accepted Papers</h1>
+      <p class="sub">ICLR 2026 Workshop on Recursive Self-Improvement</p>
+      <nav class="nav" aria-label="Page links">
+        <a class="home-link" href="index.html">Back to Home</a>
+      </nav>
+      <p class="accepted-note">110 Papers Accepted, Congrats!</p>
+    </header>
+
+    <section id="oral">
+      <div class="section-head">
+        <h2>Oral</h2>
+        <span>4 papers</span>
+      </div>
+      <ul class="paper-list">
+      <li><span class="paper-id">#1</span> <a href="https://openreview.net/forum?id=hYYeOl58xi" target="_blank" rel="noopener">Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning</a></li>
+      <li><span class="paper-id">#2</span> <a href="https://openreview.net/forum?id=zpiYsPVDlV" target="_blank" rel="noopener">Contextual Drag: How Errors in the Context Affect LLM Reasoning</a></li>
+      <li><span class="paper-id">#3</span> <a href="https://openreview.net/forum?id=sOq52KnJmR" target="_blank" rel="noopener">Learning to Continually Learn via Meta-learning Agentic Memory Designs</a></li>
+      <li><span class="paper-id">#4</span> <a href="https://openreview.net/forum?id=FJKOIxkUxo" target="_blank" rel="noopener">PostTrainBench: Can LLM Agents Automate LLM Post-Training?</a></li>
+      </ul>
+    </section>
+    <section id="spotlight">
+      <div class="section-head">
+        <h2>Spotlight</h2>
+        <span>21 papers</span>
+      </div>
+      <ul class="paper-list">
+      <li><span class="paper-id">#5</span> <a href="https://openreview.net/forum?id=uB8YQHNsh6" target="_blank" rel="noopener">Language Self-Play For Data-Free Training</a></li>
+      <li><span class="paper-id">#6</span> <a href="https://openreview.net/forum?id=oYHelQ3Edd" target="_blank" rel="noopener">SimpleMem: Efficient Lifelong Memory for LLM Agents</a></li>
+      <li><span class="paper-id">#7</span> <a href="https://openreview.net/forum?id=gpLJamvbsK" target="_blank" rel="noopener">Towards Execution-Grounded Automated AI Research</a></li>
+      <li><span class="paper-id">#8</span> <a href="https://openreview.net/forum?id=D93migx9av" target="_blank" rel="noopener">Knowledge is Not Enough: Injecting RL Skills for Continual Adaptation</a></li>
+      <li><span class="paper-id">#9</span> <a href="https://openreview.net/forum?id=Nj6VGY4dej" target="_blank" rel="noopener">Can Language Models Discover Scaling Laws?</a></li>
+      <li><span class="paper-id">#10</span> <a href="https://openreview.net/forum?id=ajcjip0yFR" target="_blank" rel="noopener">Self-Improving World Models via Asymmetric Forward-Inverse Consistency</a></li>
+      <li><span class="paper-id">#11</span> <a href="https://openreview.net/forum?id=aY5kmaNrwB" target="_blank" rel="noopener">Tiny Autoregressive Recursive Models</a></li>
+      <li><span class="paper-id">#12</span> <a href="https://openreview.net/forum?id=yIDgVx3OoN" target="_blank" rel="noopener">From Growing to Looping: A Unified View of Iterative Computation in LLMs</a></li>
+      <li><span class="paper-id">#13</span> <a href="https://openreview.net/forum?id=q5qN3oQ4D1" target="_blank" rel="noopener">Lang-PINN: From Language to Physics-Informed Neural Networks via a Multi-Agent Framework</a></li>
+      <li><span class="paper-id">#14</span> <a href="https://openreview.net/forum?id=d40v7Qcpi4" target="_blank" rel="noopener">Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations</a></li>
+      <li><span class="paper-id">#15</span> <a href="https://openreview.net/forum?id=ecKAmz5vlO" target="_blank" rel="noopener">ACE: Self-Evolving LLM Coding Framework Adversarial Unit Test Generation and Preference Optimization</a></li>
+      <li><span class="paper-id">#16</span> <a href="https://openreview.net/forum?id=BAdK20xfqj" target="_blank" rel="noopener">Can Current Language Models Close the Discovery to Application Loop?</a></li>
+      <li><span class="paper-id">#17</span> <a href="https://openreview.net/forum?id=14jSctSh0D" target="_blank" rel="noopener">CausalEvolve: Towards Open-Ended Discovery with Causal Scratchpad</a></li>
+      <li><span class="paper-id">#18</span> <a href="https://openreview.net/forum?id=shqo2VPfc7" target="_blank" rel="noopener">Self-Improving Vision-Language-Action Models with Data Generation via Residual RL</a></li>
+      <li><span class="paper-id">#19</span> <a href="https://openreview.net/forum?id=Ro0eQ0ly3q" target="_blank" rel="noopener">VLAW: Iterative Co-Improvement of Vision-Language-Action Policy and World Model</a></li>
+      <li><span class="paper-id">#20</span> <a href="https://openreview.net/forum?id=iEmRSwdzyw" target="_blank" rel="noopener">Test-Time Self-Distillation</a></li>
+      <li><span class="paper-id">#21</span> <a href="https://openreview.net/forum?id=aA2PXFH2Cp" target="_blank" rel="noopener">Self-Evolving Rubrics: Interpretable Instance-Level Criteria for Scalable RL</a></li>
+      <li><span class="paper-id">#22</span> <a href="https://openreview.net/forum?id=lTbBFAoPSA" target="_blank" rel="noopener">Anchored Self-Play for Code Repair</a></li>
+      <li><span class="paper-id">#23</span> <a href="https://openreview.net/forum?id=6GTlSlWW9C" target="_blank" rel="noopener">Interestingness as an Inductive Heuristic for Future Compression Progress</a></li>
+      <li><span class="paper-id">#24</span> <a href="https://openreview.net/forum?id=NYrOkAfDkP" target="_blank" rel="noopener">GASP: Guided Asymmetric Self-Play For Coding LLMs</a></li>
+      <li><span class="paper-id">#25</span> <a href="https://openreview.net/forum?id=GjoUJTfXiW" target="_blank" rel="noopener">Adaptive Meta-Curriculum for Test-Time Self-Improvement</a></li>
+      </ul>
+    </section>
+    <section id="poster">
+      <div class="section-head">
+        <h2>Poster</h2>
+        <span>75 papers</span>
+      </div>
+      <ul class="paper-list">
+      <li><span class="paper-id">#26</span> <a href="https://openreview.net/forum?id=VOa0lDJ5Ui" target="_blank" rel="noopener">Self-Improving Clinical Reasoning via Textual Gradients</a></li>
+      <li><span class="paper-id">#27</span> <a href="https://openreview.net/forum?id=h4iPWHGapI" target="_blank" rel="noopener">Federated Agent Reinforcement Learning</a></li>
+      <li><span class="paper-id">#28</span> <a href="https://openreview.net/forum?id=JKx0zkUBsQ" target="_blank" rel="noopener">Agent0-VL: Exploring Self-Evolving Agent for Tool-Integrated Vision-Language Reasoning</a></li>
+      <li><span class="paper-id">#29</span> <a href="https://openreview.net/forum?id=4TUzVEzVdu" target="_blank" rel="noopener">OMEGA: Optimizing Machine learning by Evaluating Generated Algorithms</a></li>
+      <li><span class="paper-id">#30</span> <a href="https://openreview.net/forum?id=hCjgh8jxKl" target="_blank" rel="noopener">Intelligent Robot Manipulation Requires Self-Directed Learning</a></li>
+      <li><span class="paper-id">#31</span> <a href="https://openreview.net/forum?id=OlMSrldTNe" target="_blank" rel="noopener">Correct Reasoning Paths Visit Shared Decision Pivots</a></li>
+      <li><span class="paper-id">#32</span> <a href="https://openreview.net/forum?id=mBgcG43j7a" target="_blank" rel="noopener">RFTF: Reinforcement Fine-tuning for Vision-language-action Models with Temporal Feedback</a></li>
+      <li><span class="paper-id">#33</span> <a href="https://openreview.net/forum?id=l5QPYxMEaH" target="_blank" rel="noopener">VerlTool: Towards Holistic Agentic Reinforcement Learning with Tool Use</a></li>
+      <li><span class="paper-id">#34</span> <a href="https://openreview.net/forum?id=5XGfbXlFmA" target="_blank" rel="noopener">TangramSR: A Benchmark for Recursive Self-Improvement In Continuous Geometric Reasoning</a></li>
+      <li><span class="paper-id">#35</span> <a href="https://openreview.net/forum?id=56D2hjARkn" target="_blank" rel="noopener">SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning</a></li>
+      <li><span class="paper-id">#36</span> <a href="https://openreview.net/forum?id=gOTCn5uZeE" target="_blank" rel="noopener">A Framework for Prompt Optimization and Translation Across Foundation Models</a></li>
+      <li><span class="paper-id">#37</span> <a href="https://openreview.net/forum?id=YzDC5hjGUM" target="_blank" rel="noopener">Escaping Model Collapse via Synthetic Data Verification:  Near-term Improvements and Long-term Convergence</a></li>
+      <li><span class="paper-id">#38</span> <a href="https://openreview.net/forum?id=KbGkWv7VEk" target="_blank" rel="noopener">LLM-FE: Automated Feature Engineering for Tabular Data with LLMs as Evolutionary Optimizers</a></li>
+      <li><span class="paper-id">#39</span> <a href="https://openreview.net/forum?id=tgnbgt3Ctr" target="_blank" rel="noopener">Contrastive Self-Refinement for Low-Cost Adaptation in Real-World Text-to-SQL</a></li>
+      <li><span class="paper-id">#40</span> <a href="https://openreview.net/forum?id=QSWFqDcveB" target="_blank" rel="noopener">Simple Baselines are Competitive with Code Evolution</a></li>
+      <li><span class="paper-id">#41</span> <a href="https://openreview.net/forum?id=gGH3Xp1lHR" target="_blank" rel="noopener">Rethinking Machine Unlearning: Models Designed to Forget via Key Deletion</a></li>
+      <li><span class="paper-id">#42</span> <a href="https://openreview.net/forum?id=8I0n20ufAy" target="_blank" rel="noopener">Self-CriTeach: LLM Self-Teaching and Self-Critiquing for Improving Robotic Planning via Automated Domain Generation</a></li>
+      <li><span class="paper-id">#43</span> <a href="https://openreview.net/forum?id=0ZGL40jRKE" target="_blank" rel="noopener">Unlocking Intrinsic Self-Reflection for LLM Preference Policy Optimization</a></li>
+      <li><span class="paper-id">#44</span> <a href="https://openreview.net/forum?id=h0XYERyeL6" target="_blank" rel="noopener">TextBO: Bayesian Optimization in Language Space for Eval-Efficient Self-Improving AI</a></li>
+      <li><span class="paper-id">#45</span> <a href="https://openreview.net/forum?id=wlwkLVvB0W" target="_blank" rel="noopener">POLARIS: A GODEL AGENT FRAMEWORK FOR SMALL LANGUAGE MODELS THROUGH EXPERIENCE ABSTRACTED POLICY REPAIR</a></li>
+      <li><span class="paper-id">#46</span> <a href="https://openreview.net/forum?id=Oc5R3D2TfE" target="_blank" rel="noopener">Shape of Thought: When Distribution Matters More than Correctness in Reasoning Tasks</a></li>
+      <li><span class="paper-id">#47</span> <a href="https://openreview.net/forum?id=TnjlvLY30w" target="_blank" rel="noopener">Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search</a></li>
+      <li><span class="paper-id">#48</span> <a href="https://openreview.net/forum?id=HuLoDnvC29" target="_blank" rel="noopener">Teaching Models to Teach Themselves: Reasoning at the Edge of Learnability</a></li>
+      <li><span class="paper-id">#49</span> <a href="https://openreview.net/forum?id=0DyJeJ3iia" target="_blank" rel="noopener">Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</a></li>
+      <li><span class="paper-id">#50</span> <a href="https://openreview.net/forum?id=WA6q2pNQhj" target="_blank" rel="noopener">Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision</a></li>
+      <li><span class="paper-id">#51</span> <a href="https://openreview.net/forum?id=djdSNvWpJ7" target="_blank" rel="noopener">Theory-Driven Modeling and LLM-Guided Evolution for Power System Scheduling</a></li>
+      <li><span class="paper-id">#52</span> <a href="https://openreview.net/forum?id=uXTXcZ615k" target="_blank" rel="noopener">Differentiable Evolutionary Reinforcement Learning</a></li>
+      <li><span class="paper-id">#53</span> <a href="https://openreview.net/forum?id=rL0GEyoMvE" target="_blank" rel="noopener">Your Self-Play Algorithm is Secretly an Adversarial Imitator:  Understanding LLM Self-Play through the Lens of Imitation Learning</a></li>
+      <li><span class="paper-id">#54</span> <a href="https://openreview.net/forum?id=rIzREKws05" target="_blank" rel="noopener">Unrolled Policy Iteration for Tiny Recursive Models</a></li>
+      <li><span class="paper-id">#55</span> <a href="https://openreview.net/forum?id=DROMQyqM52" target="_blank" rel="noopener">Reasoning Cache: Learning to Extrapolate to Long Lengths via Short-Length RL</a></li>
+      <li><span class="paper-id">#56</span> <a href="https://openreview.net/forum?id=DlhLLVhrZB" target="_blank" rel="noopener">ESDAE: Evaluating Synthetic Data for Agent Evaluation</a></li>
+      <li><span class="paper-id">#57</span> <a href="https://openreview.net/forum?id=JYJXWnujvR" target="_blank" rel="noopener">Actor-Curator: Scalable Policy-driven Curriculum Learning for RL Post-Training</a></li>
+      <li><span class="paper-id">#58</span> <a href="https://openreview.net/forum?id=ikrQWGgxYg" target="_blank" rel="noopener">Reward Hacking in Self-Improving Code Agents</a></li>
+      <li><span class="paper-id">#59</span> <a href="https://openreview.net/forum?id=sSwXGq1RRI" target="_blank" rel="noopener">Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping</a></li>
+      <li><span class="paper-id">#60</span> <a href="https://openreview.net/forum?id=TRQLuxgxBN" target="_blank" rel="noopener">Learning What to Learn: Curriculum Curation for Test-Time Agent Learning</a></li>
+      <li><span class="paper-id">#61</span> <a href="https://openreview.net/forum?id=Hv5hDfbhuB" target="_blank" rel="noopener">Beyond Solving: A Closer Look at LLMs as Solution Verifiers</a></li>
+      <li><span class="paper-id">#62</span> <a href="https://openreview.net/forum?id=RvgoRhan6d" target="_blank" rel="noopener">Aligned but Stereotypical? Understanding and Mitigating Social Bias in LLM-Driven Text-to-Image Models</a></li>
+      <li><span class="paper-id">#63</span> <a href="https://openreview.net/forum?id=Enqas0eZF6" target="_blank" rel="noopener">Do Depth-Grown Models Overcome the Curse of Depth? An In-Depth Analysis</a></li>
+      <li><span class="paper-id">#64</span> <a href="https://openreview.net/forum?id=BtHRvwzJj8" target="_blank" rel="noopener">CoT-Seg: Rethinking Segmentation with Chain-of-Thought Reasoning and Self-Correction</a></li>
+      <li><span class="paper-id">#65</span> <a href="https://openreview.net/forum?id=UcIFJPXqrB" target="_blank" rel="noopener">AlphaApollo: A System for Deep Agentic Reasoning</a></li>
+      <li><span class="paper-id">#66</span> <a href="https://openreview.net/forum?id=fWrhAOQZ5A" target="_blank" rel="noopener">Reasoning Within the Mind: Dynamic Multimodal Interleaving in Latent Space</a></li>
+      <li><span class="paper-id">#67</span> <a href="https://openreview.net/forum?id=jfi88XbVsn" target="_blank" rel="noopener">Leveraging Suboptimal and Noisy Trajectories for Goal-Conditional Offline RL</a></li>
+      <li><span class="paper-id">#68</span> <a href="https://openreview.net/forum?id=g9rEYVNn5T" target="_blank" rel="noopener">AUTOHARNESS: IMPROVING LLM AGENTS BY AUTOMATICALLY SYNTHESIZING A CODE HARNESS</a></li>
+      <li><span class="paper-id">#69</span> <a href="https://openreview.net/forum?id=ucRjPd9HVU" target="_blank" rel="noopener">One-Step Video Depth Estimation via Self-Distillation</a></li>
+      <li><span class="paper-id">#70</span> <a href="https://openreview.net/forum?id=z9MOHU8RjL" target="_blank" rel="noopener">Discover the distinguishing and effective reasoning patterns among LLMs via an LLM</a></li>
+      <li><span class="paper-id">#71</span> <a href="https://openreview.net/forum?id=f1eKYFvMNu" target="_blank" rel="noopener">Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models</a></li>
+      <li><span class="paper-id">#72</span> <a href="https://openreview.net/forum?id=KCcpSuocz0" target="_blank" rel="noopener">Self-EvolveRec: Self-Evolving Recommender Systems with LLM-based Directional Feedback</a></li>
+      <li><span class="paper-id">#73</span> <a href="https://openreview.net/forum?id=WnZHbe1Gu0" target="_blank" rel="noopener">Learning to Evolve: Scaling Open-Ended Discovery with Relative-Progress RL</a></li>
+      <li><span class="paper-id">#74</span> <a href="https://openreview.net/forum?id=KgkMSbYoL1" target="_blank" rel="noopener">Improved Iterative Refinement for Chart-to-Code Generation via Structured Instruction</a></li>
+      <li><span class="paper-id">#75</span> <a href="https://openreview.net/forum?id=NeNWeyfUJj" target="_blank" rel="noopener">Language-Guided Expertise Evolution for Protein Optimization</a></li>
+      <li><span class="paper-id">#76</span> <a href="https://openreview.net/forum?id=EEc4Pn2GSa" target="_blank" rel="noopener">A Task-Centric Theory for Iterative Self-Improvement with Easy-to-Hard Curricula</a></li>
+      <li><span class="paper-id">#77</span> <a href="https://openreview.net/forum?id=7fIqKZ92Fy" target="_blank" rel="noopener">Adaptive Decoding via Test-Time Policy Learning for Self-Improving Generation</a></li>
+      <li><span class="paper-id">#78</span> <a href="https://openreview.net/forum?id=nT1gTSAf07" target="_blank" rel="noopener">Dynamic Noise Preference Optimization: Self-Improvement of Large Language Models with Self-Synthetic Data</a></li>
+      <li><span class="paper-id">#79</span> <a href="https://openreview.net/forum?id=gF6jmAsbpZ" target="_blank" rel="noopener">Vision-Guided Iterative Refinement for Frontend Code Generation</a></li>
+      <li><span class="paper-id">#80</span> <a href="https://openreview.net/forum?id=s06wgoO65a" target="_blank" rel="noopener">MAPPA: Scaling Multiagent Systems with Process Rewards</a></li>
+      <li><span class="paper-id">#81</span> <a href="https://openreview.net/forum?id=9m4kM3bK2b" target="_blank" rel="noopener">Residual Off-Policy RL for Finetuning Behavior Cloning Policies</a></li>
+      <li><span class="paper-id">#82</span> <a href="https://openreview.net/forum?id=b3dPMokQki" target="_blank" rel="noopener">SAGE: Self-play Adversarial Games Enhance Large Language Model Reasoning Capabilities</a></li>
+      <li><span class="paper-id">#83</span> <a href="https://openreview.net/forum?id=SeZCSEGZTq" target="_blank" rel="noopener">Soft Mellowmax Monte Carlo Planning</a></li>
+      <li><span class="paper-id">#84</span> <a href="https://openreview.net/forum?id=32xd2HdB9m" target="_blank" rel="noopener">Log-Augmented Generation: Scaling Test-Time Reasoning with Reusable Computation</a></li>
+      <li><span class="paper-id">#85</span> <a href="https://openreview.net/forum?id=8hYSvUpJBA" target="_blank" rel="noopener">Self-Improving VLM Judges Without Human Annotations</a></li>
+      <li><span class="paper-id">#86</span> <a href="https://openreview.net/forum?id=38t39AFZPE" target="_blank" rel="noopener">Duel-Evolve: Pairwise Preference Black-Box Optimization of LLM Responses</a></li>
+      <li><span class="paper-id">#87</span> <a href="https://openreview.net/forum?id=1iAEFtFQ9M" target="_blank" rel="noopener">MimicAgent: Learning Quadruped Skills via Text-to-Trajectory Generation</a></li>
+      <li><span class="paper-id">#88</span> <a href="https://openreview.net/forum?id=A0dlCcZ4hT" target="_blank" rel="noopener">Feedback Descent: Open-Ended Text Optimization via Pairwise Comparison</a></li>
+      <li><span class="paper-id">#89</span> <a href="https://openreview.net/forum?id=JNsTWIukjQ" target="_blank" rel="noopener">CircuitBuilder: From Polynomials to Circuits via Reinforcement Learning</a></li>
+      <li><span class="paper-id">#90</span> <a href="https://openreview.net/forum?id=Vxu6kcIjwV" target="_blank" rel="noopener">Generative Recursive Reasoning Models</a></li>
+      <li><span class="paper-id">#91</span> <a href="https://openreview.net/forum?id=5UbKomO77O" target="_blank" rel="noopener">Emergent temporal abstractions in autoregressive models enable hierarchical reinforcement learning</a></li>
+      <li><span class="paper-id">#92</span> <a href="https://openreview.net/forum?id=81P20Qg44P" target="_blank" rel="noopener">Refining Large Language Models with Self-Generated Data Through Iterative Training</a></li>
+      <li><span class="paper-id">#93</span> <a href="https://openreview.net/forum?id=QopjICzGwr" target="_blank" rel="noopener">Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement</a></li>
+      <li><span class="paper-id">#94</span> <a href="https://openreview.net/forum?id=f58uDOwLaq" target="_blank" rel="noopener">In-Context Adaptation</a></li>
+      <li><span class="paper-id">#95</span> <a href="https://openreview.net/forum?id=OAFPpQO0H9" target="_blank" rel="noopener">SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement</a></li>
+      <li><span class="paper-id">#96</span> <a href="https://openreview.net/forum?id=QbL99Fyqsl" target="_blank" rel="noopener">Structure Enables Effective Self-Localization of Errors in LLMs</a></li>
+      <li><span class="paper-id">#97</span> <a href="https://openreview.net/forum?id=wZMNXHPYcO" target="_blank" rel="noopener">Self-Improvement via Fast Tree-search</a></li>
+      <li><span class="paper-id">#98</span> <a href="https://openreview.net/forum?id=ihcRmUkXHF" target="_blank" rel="noopener">Self-Adapting Agents for Automating Research Coding Workflows</a></li>
+      <li><span class="paper-id">#99</span> <a href="https://openreview.net/forum?id=iRhaK8PsuB" target="_blank" rel="noopener">Verifying the Verifiers: Failure Attribution for Agentic Benchmark Diagnostics and Training Data Curation</a></li>
+      <li><span class="paper-id">#100</span> <a href="https://openreview.net/forum?id=kKWSQsYgpa" target="_blank" rel="noopener">Just Enough Learning: GRPO-Guided Controllers for Hyperparameter Sweeps</a></li>
+      </ul>
+    </section>
+    <section id="short-paper">
+      <div class="section-head">
+        <h2>Short Paper</h2>
+        <span>10 papers</span>
+      </div>
+      <ul class="paper-list">
+      <li><span class="paper-id">#101</span> <a href="https://openreview.net/forum?id=MKG4BaSieN" target="_blank" rel="noopener">Real-Time Procedural Learning From Experience for AI Agents</a></li>
+      <li><span class="paper-id">#102</span> <a href="https://openreview.net/forum?id=0IbjWHRGMC" target="_blank" rel="noopener">Reference-Guided Machine Unlearning</a></li>
+      <li><span class="paper-id">#103</span> <a href="https://openreview.net/forum?id=Ne0s3UOzdB" target="_blank" rel="noopener">Test-Time Adaptation via Many-Shot Prompting: Benefits, Limits, and Pitfalls</a></li>
+      <li><span class="paper-id">#104</span> <a href="https://openreview.net/forum?id=7dNjMllnWe" target="_blank" rel="noopener">Cross-Family Speculative Prefill: Training-Free Long-Context Compression with Small Draft Models</a></li>
+      <li><span class="paper-id">#105</span> <a href="https://openreview.net/forum?id=1zDG1o16xB" target="_blank" rel="noopener">Depth vs Recursion: Outperforming Transformers in Jigsaw Reconstruction</a></li>
+      <li><span class="paper-id">#106</span> <a href="https://openreview.net/forum?id=G0GE1xbR0w" target="_blank" rel="noopener">Test-Time Meta-Adaptation with Self-Synthesis</a></li>
+      <li><span class="paper-id">#107</span> <a href="https://openreview.net/forum?id=gh7aCT73cq" target="_blank" rel="noopener">Federation over Text</a></li>
+      <li><span class="paper-id">#108</span> <a href="https://openreview.net/forum?id=smLtz7WID0" target="_blank" rel="noopener">TamperBench: A Systematic Framework to Stress-Test LLM Safety Under Fine-Tuning and Tampering</a></li>
+      <li><span class="paper-id">#109</span> <a href="https://openreview.net/forum?id=FySoHBWmt9" target="_blank" rel="noopener">Build, Judge, Optimize: A Blueprint for Continuous Improvement of Multi-Agent Consumer Assistants</a></li>
+      <li><span class="paper-id">#110</span> <a href="https://openreview.net/forum?id=lb6Ce20kl5" target="_blank" rel="noopener">Orthogonal Gradient Projection for Continual LLM Unlearning</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
