@@ -98,9 +98,10 @@
       display: flex;
       gap: 18px;
       flex-wrap: nowrap;
+      align-items: center;
       font-weight: 700;
       font-size: 15px;
-      overflow-x: auto;
+      overflow: visible;
       white-space: nowrap;
       scrollbar-width: none;
     }
@@ -109,8 +110,34 @@
       text-decoration: none;
       color: var(--text);
       opacity: 0.94;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
     }
     nav a:hover { opacity: 1; }
+    nav a.accepted-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: #fff;
+      opacity: 1;
+      background: linear-gradient(120deg, #8c1b16, #c26a2e, #8c1b16);
+      background-size: 220% 100%;
+      box-shadow: 0 8px 20px rgba(140, 27, 22, 0.28);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+      animation: acceptedGlow 3.8s ease-in-out infinite;
+    }
+    nav a.accepted-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(140, 27, 22, 0.34);
+    }
+    @keyframes acceptedGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     .iclr-badge {
       position: absolute;
       top: 44px;
@@ -414,7 +441,7 @@
         <!-- <a href="#data">Data</a> -->
         <a href="#dates">Dates</a>
         <a href="#schedule">Schedule</a>
-        <a href="papers.html">Papers</a>
+        <a class="accepted-link" href="papers.html">Accepted Papers</a>
         <a href="#speakers">Speakers</a>
         <a href="#organizers">Organizers</a>
         <a href="#partners">Sponsors</a>
