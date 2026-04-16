@@ -312,6 +312,48 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
+    .panel-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .panel-grid {
+      display: flex;
+      gap: 24px;
+      flex-wrap: nowrap;
+      width: max-content;
+      flex: 0 0 auto;
+    }
+    .panel-grid .person {
+      width: 150px;
+      flex: 0 0 150px;
+    }
+    .panel-grid.two-row {
+      display: grid;
+      grid-template-columns: repeat(4, 150px);
+      column-gap: 24px;
+      row-gap: 24px;
+      width: auto;
+    }
+    .panel-grid.two-row .person {
+      flex: none;
+    }
+    .moderator-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 150px;
+      margin-left: 24px;
+      padding-left: 24px;
+      border-left: 1px solid var(--line);
+      flex: 0 0 150px;
+    }
+    .moderator-grid .person {
+      width: 150px;
+      flex: 0 0 150px;
+    }
     .person {
       display: flex;
       flex-direction: column;
@@ -331,13 +373,94 @@
       border: 2px solid #fff;
       background: #fff;
     }
+    .avatar-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      background: #f3e7d6;
+      border-style: dashed;
+    }
     .person .meta {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
+    .person .role {
+      color: #a3562c;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
     .person .name { font-weight: 700; font-size: 15px; }
     .person .aff { color: var(--muted); font-size: 14px; }
+    .people-block + .people-block {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .people-block h4 {
+      margin: 0 0 14px;
+      font-size: 19px;
+      letter-spacing: -0.1px;
+    }
+    .people-block h4 .subtle {
+      font-size: 0.82em;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .people-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    @media (max-width: 1100px) {
+      .panel-layout {
+        flex-direction: column;
+      }
+      .panel-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+      }
+      .panel-grid .person {
+        width: auto;
+        flex: none;
+      }
+      .moderator-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        flex: none;
+        margin-left: 0;
+        margin-top: 22px;
+        padding-left: 0;
+        padding-top: 18px;
+        border-left: none;
+        border-top: 1px solid var(--line);
+        gap: 16px;
+      }
+      .moderator-grid .person {
+        width: auto;
+        flex: none;
+      }
+    }
+    @media (max-width: 760px) {
+      .panel-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 520px) {
+      .panel-grid {
+        grid-template-columns: 1fr;
+      }
+      .moderator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .partners {
       display: flex;
@@ -418,6 +541,14 @@
       font-size: 13px;
       color: #5a3c27;
     }
+    .oral-list {
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .oral-list div + div {
+      margin-top: 6px;
+    }
 
   </style>
 </head>
@@ -447,6 +578,7 @@
         <a href="#schedule">Schedule</a>
         <a class="accepted-link" href="papers.html">Accepted Papers</a>
         <a href="#speakers">Speakers</a>
+        <a href="#panelists">Panelists</a>
         <a href="#organizers">Organizers</a>
         <a href="#partners">Sponsors</a>
         <a href="#contact">Contact</a>
@@ -455,7 +587,7 @@
 
     <div class="hero-text">
       <h2>Design the<br> <span class="accent-word">l<span class="accent-infinity">∞</span>ps</span>,<br>Prove the<br><span class="accent-word">g<span class="accent-ai">ai</span>ns</span>.</h2>
-      <p class="date-pill">🗓️ April 23 to 27<br>Rio de Janeiro, Brazil<br>Alongside ICLR 2026</p>
+      <p class="date-pill">🗓️ April 23 to 27<br>Rio de Janeiro, Brazil<br>Workshop Day: April 26<br>Room 101 - D</p>
     </div>
     <div class="hero-cta">
       <a class="btn" href="https://openreview.net/group?id=ICLR.cc/2026/Workshop/RSI" target="_blank" rel="noopener">Submit on OpenReview</a>
@@ -464,7 +596,7 @@
 
   <main class="content-wrap">
     <section id="about" class="section">
-      <p><strong>Bem-vindos! We’re the ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026), possibly the world's first workshop dedicated exclusively to RSI</strong>, held alongside ICLR 2026 in Rio de Janeiro (April 23 to 27, 2026; workshop day April 26 or 27). The timing couldn't be better.</p>
+      <p><strong>Bem-vindos! We’re the ICLR 2026 Workshop on AI with Recursive Self-Improvement (RSI 2026), possibly the world's first workshop dedicated exclusively to RSI</strong>, held alongside ICLR 2026 in Rio de Janeiro (April 23 to 27, 2026; workshop day April 26; room 101 - D). The timing couldn't be better.</p>
       <p>Recursive self improvement is no longer a speculative vision. It is becoming a concrete systems problem. Across text, speech, vision, and embodied interaction, today’s models can already diagnose their failures, critique their behavior, update internal representations, and modify external tools. What’s missing is not ambition, but principled methods, system designs, and evaluations that make self improvement measurable, reliable, and deployable.</p>
       <p>This workshop brings together researchers working on recursive self improving AI across omni models, multimodal agents, robotics, and scientific discovery. We focus on practical advances such as critique and reward driven learning, test time adaptation, experience accumulation, and governed model updates.</p>
     </section>
@@ -480,9 +612,10 @@
 		      <ul class="dates">
 		        <li>Paper submission opens: <strong>January 1, 2026</strong></li>
 		        <li>Paper submission deadline: <strong>February 10, 2026</strong></li>
-		        <li>Review deadline for reviewers: <strong><del>February 23, 2026</del> February 28, 2026</strong></li>
-		        <li>Author notification: <strong><del>March 1, 2026</del> March 5, 2026</strong></li>
-		        <li>Workshop day: <strong>April 26 or 27, 2026</strong></li>
+			        <li>Review deadline for reviewers: <strong>February 28, 2026</strong></li>
+			        <li>Author notification: <strong>March 5, 2026</strong></li>
+			        <li>Workshop day: <strong>April 26, 2026</strong></li>
+			        <li>Location: <strong>101 - D</strong></li>
 		      </ul>
 		    </section>
 
@@ -527,84 +660,94 @@
             <tr>
               <td class="time">09:00 - 09:30</td>
               <td>Invited Talk 1</td>
-              <td>Yu Su (Ohio State University)</td>
+              <td>Louis Kirsch</td>
             </tr>
             <tr>
               <td class="time">09:30 - 10:00</td>
               <td>Invited Talk 2</td>
-              <td>Arman Cohan</td>
+              <td>Bing Liu</td>
             </tr>
             <tr class="break-row">
               <td class="time">10:00 - 10:30</td>
-              <td>Coffee Break &amp; Networking</td>
-              <td>TBA</td>
+              <td>Poster Session 1 / Networking / Coffee Break</td>
+              <td>All audience</td>
             </tr>
             <tr>
               <td class="time">10:30 - 11:00</td>
               <td>Invited Talk 3</td>
-              <td>TBA</td>
+              <td>Chelsea Finn</td>
             </tr>
             <tr>
-              <td class="time">11:00 - 11:30</td>
-              <td>Oral Session I (3 talks, 10 minutes each)</td>
-              <td>TBA</td>
+              <td class="time">11:00 - 11:20</td>
+              <td>Oral Session I (2 talks, 10 minutes each)</td>
+              <td><div class="oral-list"><div>#1 Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning</div><div>#2 Contextual Drag: How Errors in the Context Affect LLM Reasoning</div></div></td>
             </tr>
             <tr>
-              <td class="time">11:30 - 12:00</td>
+              <td class="time">11:20 - 11:50</td>
               <td>Invited Talk 4</td>
-              <td>TBA</td>
+              <td>Sergey Levine</td>
             </tr>
             <tr class="lunch-row">
-              <td class="time">12:00 - 13:10</td>
-              <td>Lunch &amp; Networking</td>
+              <td class="time">11:50 - 12:30</td>
+              <td>Poster Session 2 / Networking / Lunch</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="time">12:30 - 13:00</td>
+              <td>Invited Talk 5</td>
+              <td>Jeff Clune</td>
+            </tr>
+            <tr class="break-row">
+              <td class="time">13:00 - 13:10</td>
+              <td>Transition / Networking</td>
               <td></td>
             </tr>
             <tr class="session-row">
               <td colspan="3">Afternoon Session</td>
             </tr>
             <tr>
-              <td class="time">13:10 - 13:40</td>
-              <td>Invited Talk 5</td>
-              <td>Yuandong Tian</td>
+              <td class="time">13:10 - 14:00</td>
+              <td>Super Stars Panel</td>
+              <td>Sergey Levine, Julian Schrittwieser, Yuandong Tian, TBD, TBD; Moderator: Jürgen Schmidhuber</td>
             </tr>
             <tr>
-              <td class="time">13:40 - 14:10</td>
+              <td class="time">14:00 - 14:30</td>
               <td>Invited Talk 6</td>
-              <td>Matej Balog</td>
-            </tr>
-            <tr class="break-row">
-              <td class="time">14:10 - 14:40</td>
-              <td>Coffee Break &amp; Networking</td>
-              <td>TBA</td>
-            </tr>
-            <tr>
-              <td class="time">14:40 - 15:10</td>
-              <td>Invited Talk 7</td>
               <td>Bang Liu</td>
             </tr>
             <tr>
-              <td class="time">15:10 - 15:40</td>
-              <td>Oral Session II (3 talks, 10 minutes each)</td>
+              <td class="time">14:30 - 15:00</td>
+              <td>Invited Talk 7</td>
+              <td>Yu Su (Ohio State University)</td>
+            </tr>
+            <tr class="break-row">
+              <td class="time">15:00 - 15:20</td>
+              <td>Poster Session 3 / Networking / Coffee Break</td>
               <td>TBA</td>
             </tr>
             <tr>
-              <td class="time">15:40 - 16:00</td>
-              <td>Poster Session / Networking</td>
-              <td>TBA</td>
+              <td class="time">15:20 - 15:40</td>
+              <td>Oral Session II (2 talks, 10 minutes each)</td>
+              <td><div class="oral-list"><div>#3 Learning to Continually Learn via Meta-learning Agentic Memory Designs</div><div>#4 PostTrainBench: Can LLM Agents Automate LLM Post-Training?</div></div></td>
             </tr>
             <tr>
-              <td class="time">16:00 - 16:30</td>
+              <td class="time">15:40 - 16:10</td>
               <td>Invited Talk 8</td>
-              <td>Graham Neubig (Carnegie Mellon University / All Hand AI)</td>
+              <td>Yuandong Tian</td>
+            </tr>
+            <tr class="break-row">
+              <td class="time">16:10 - 16:30</td>
+              <td>Transition / Networking</td>
+              <td></td>
             </tr>
             <tr>
               <td class="time">16:30 - 17:20</td>
-              <td>Panel Discussion (Afternoon Closing Session)</td>
-              <td>All available invited speakers</td>
+              <td>Open-Talk Panel</td>
+              <td>Louis Kirsch, Mengyue Yang, Ran Xu, Yi Lu, Zhenfei Yin, TBD, TBD, TBD; Moderators: Mingchen Zhuge, Rong Zou</td>
             </tr>
             <tr>
-              <td class="time">17:20 - 17:30</td>
-              <td>Closing Remarks</td>
+              <td class="time">17:20 - 17:50</td>
+              <td>Awarding &amp; Closing Remarks</td>
               <td>Organizers</td>
             </tr>
           </tbody>
@@ -618,16 +761,54 @@
     </section>
 
     <section id="speakers" class="section">
-      <h3>Speakers &amp; Panelists <span class="subtle">(alphabetical order)</span></h3>
+      <h3>Speakers <span class="subtle">(alphabetical order)</span></h3>
       <div class="people-grid">
-        <div class="person"><img class="avatar" src="assets/photos/arman.jpeg" alt="Arman Cohan"><div class="meta"><span class="name">Arman Cohan</span><span class="aff">Yale University</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/bang.jpeg" alt="Bang Liu"><div class="meta"><span class="name">Bang Liu</span><span class="aff">Université de Montréal / Mila</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/bingliu_24.jpeg" alt="Bing Liu"><div class="meta"><span class="name">Bing Liu</span><span class="aff">Scale</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/chelsa.jpg" alt="Chelsea Finn"><div class="meta"><span class="name">Chelsea Finn</span><span class="aff">Stanford University</span></div></div>
-        <div class="person"><img class="avatar" src="assets/photos/neubig.jpg" alt="Graham Neubig"><div class="meta"><span class="name">Graham Neubig</span><span class="aff">OpenHands / Carnegie Mellon University</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/jeff_clune.webp" alt="Jeff Clune"><div class="meta"><span class="name">Jeff Clune</span><span class="aff">UBC / DeepMind</span></div></div>
-        <div class="person"><img class="avatar" src="assets/photos/matej.jpeg" alt="Matej Balog"><div class="meta"><span class="name">Matej Balog</span><span class="aff">Google DeepMind</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/louis.jpeg" alt="Louis Kirsch"><div class="meta"><span class="name">Louis Kirsch</span><span class="aff">DeepMind</span></div></div>
+        <div class="person"><img class="avatar" src="assets/photos/sergey.webp" alt="Sergey Levine"><div class="meta"><span class="name">Sergey Levine</span><span class="aff">UC Berkeley, Physical Intelligence</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/su.jpeg" alt="Yu Su"><div class="meta"><span class="name">Yu Su</span><span class="aff">Ohio State University</span></div></div>
         <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span></div></div>
+      </div>
+    </section>
+
+    <section id="panelists" class="section">
+      <h3>Panelists</h3>
+      <div class="people-block">
+        <h4>Super Stars Panel <span class="subtle">(1:10 PM - 2:00 PM)</span></h4>
+        <div class="panel-layout">
+          <div class="people-grid panel-grid">
+            <div class="person"><img class="avatar" src="assets/photos/sergey.webp" alt="Sergey Levine"><div class="meta"><span class="name">Sergey Levine</span><span class="aff">UC Berkeley, Physical Intelligence</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/julian.webp" alt="Julian Schrittwieser"><div class="meta"><span class="name">Julian Schrittwieser</span><span class="aff">Anthropic</span></div></div>
+            <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
+            <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
+          </div>
+          <div class="people-grid moderator-grid">
+            <div class="person"><img class="avatar" src="assets/photos/js.jpg" alt="Jürgen Schmidhuber"><div class="meta"><span class="role">Moderator</span><span class="name">Jürgen Schmidhuber</span><span class="aff">KAUST / IDSIA</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="people-block">
+        <h4>Open-Talk Panel <span class="subtle">(4:30 PM - 5:20 PM)</span></h4>
+        <div class="panel-layout">
+          <div class="people-grid panel-grid two-row">
+            <div class="person"><img class="avatar" src="assets/photos/louis.jpeg" alt="Louis Kirsch"><div class="meta"><span class="name">Louis Kirsch</span><span class="aff">DeepMind</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/my.jpg" alt="Mengyue Yang"><div class="meta"><span class="name">Mengyue Yang</span><span class="aff">Bristol / UCL</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/ran_xu.jpg" alt="Ran Xu"><div class="meta"><span class="name">Ran Xu</span><span class="aff">Salesforce</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/yi.jpeg" alt="Yi Lu"><div class="meta"><span class="name">Yi Lu</span><span class="aff">Meta</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/zf.jpg" alt="Zhenfei Yin"><div class="meta"><span class="name">Zhenfei Yin</span><span class="aff">Oxford &amp; Stanford</span></div></div>
+            <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
+            <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
+            <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
+          </div>
+          <div class="people-grid moderator-grid">
+            <div class="person"><img class="avatar" src="assets/photos/mingchen.jpg" alt="Mingchen Zhuge"><div class="meta"><span class="role">Moderator</span><span class="name">Mingchen Zhuge</span><span class="aff">KAUST</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/rong_zou.jpg" alt="Rong Zou"><div class="meta"><span class="role">Moderator</span><span class="name">Rong Zou</span><span class="aff">Apple</span></div></div>
+          </div>
+        </div>
       </div>
     </section>
 
