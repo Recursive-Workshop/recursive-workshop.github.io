@@ -340,6 +340,16 @@
     .panel-grid.two-row .person {
       flex: none;
     }
+    .panel-grid.super-stars-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 150px);
+      column-gap: 24px;
+      row-gap: 24px;
+      width: auto;
+    }
+    .panel-grid.super-stars-grid .person {
+      flex: none;
+    }
     .moderator-grid {
       display: flex;
       flex-direction: column;
@@ -652,6 +662,11 @@
             <tr class="session-row">
               <td colspan="3">Morning Session</td>
             </tr>
+            <tr class="break-row">
+              <td class="time">08:00 - 08:50</td>
+              <td>Poster Session 1 / Networking</td>
+              <td>All audience</td>
+            </tr>
             <tr>
               <td class="time">08:50 - 09:00</td>
               <td>Opening Remarks</td>
@@ -669,7 +684,7 @@
             </tr>
             <tr class="break-row">
               <td class="time">10:00 - 10:30</td>
-              <td>Poster Session 1 / Networking / Coffee Break</td>
+              <td>Poster Session 2 / Networking / Coffee Break</td>
               <td>All audience</td>
             </tr>
             <tr>
@@ -689,7 +704,7 @@
             </tr>
             <tr class="lunch-row">
               <td class="time">12:00 - 12:30</td>
-              <td>Poster Session 2 / Networking / Lunch</td>
+              <td>Poster Session 3 / Networking / Lunch</td>
               <td></td>
             </tr>
             <tr>
@@ -722,7 +737,7 @@
             </tr>
             <tr class="break-row">
               <td class="time">15:00 - 15:20</td>
-              <td>Poster Session 3 / Networking / Coffee Break</td>
+              <td>Poster Session 4 / Networking / Coffee Break</td>
               <td>TBA</td>
             </tr>
             <tr>
@@ -775,14 +790,16 @@
     </section>
 
     <section id="panelists" class="section">
-      <h3>Panelists <span class="subtle">(alphabetical order within each panel)</span></h3>
+      <h3>Panelists</h3>
       <div class="people-block">
         <h4>Super Stars Panel <span class="subtle">(1:10 PM - 2:00 PM)</span></h4>
         <div class="panel-layout">
-          <div class="people-grid panel-grid">
+          <div class="people-grid panel-grid super-stars-grid">
             <div class="person"><img class="avatar" src="assets/photos/julian.webp" alt="Julian Schrittwieser"><div class="meta"><span class="name">Julian Schrittwieser</span><span class="aff">Anthropic</span></div></div>
             <div class="person"><img class="avatar" src="assets/photos/sergey.webp" alt="Sergey Levine"><div class="meta"><span class="name">Sergey Levine</span><span class="aff">UC Berkeley, Physical Intelligence</span></div></div>
             <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/matej.jpeg" alt="Matej Balog"><div class="meta"><span class="name">Matej Balog</span><span class="aff">DeepMind</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/yms.jpg" alt="Ming-Hsuan Yang"><div class="meta"><span class="name">Ming-Hsuan Yang</span><span class="aff">University of California at Merced, DeepMind</span></div></div>
             <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
             <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
           </div>
