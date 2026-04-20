@@ -382,7 +382,6 @@
     .panel-grid.super-stars-grid .summary,
     .super-panel-moderator .summary {
       display: block;
-      position: relative;
       margin-top: 6px;
       padding-left: 14px;
       border-left: 2px solid rgba(163, 86, 44, 0.35);
@@ -392,15 +391,15 @@
       text-align: left;
       letter-spacing: -0.01em;
     }
-    .panel-grid.super-stars-grid .summary::before,
-    .super-panel-moderator .summary::before {
-      content: "“";
-      position: absolute;
-      left: 4px;
-      top: -2px;
+    .panel-grid.super-stars-grid .summary::after,
+    .super-panel-moderator .summary::after {
+      content: "”";
       color: #b26a3b;
       font-size: 16px;
       font-weight: 700;
+      margin-left: 2px;
+      line-height: 0;
+      vertical-align: -0.08em;
     }
     .moderator-grid {
       display: flex;
@@ -785,7 +784,7 @@
             <tr>
               <td class="time">13:10 - 14:00</td>
               <td>Super Stars Panel</td>
-              <td>Julian Schrittwieser, Richard Socher, Yuandong Tian, Matej Balog, Ming-Hsuan Yang, TBD; Moderator: Jürgen Schmidhuber</td>
+              <td>Julian Schrittwieser, Richard Socher, Yuandong Tian, Matej Balog, Ming-Hsuan Yang, Vladlen Koltun; Moderator: Jürgen Schmidhuber</td>
             </tr>
             <tr>
               <td class="time">14:00 - 14:30</td>
@@ -857,11 +856,12 @@
         <h4>Super Stars Panel <span class="subtle">(1:10 PM - 2:00 PM)</span></h4>
         <div class="panel-layout super-stars-layout">
           <div class="people-grid panel-grid super-stars-grid">
-            <div class="person"><img class="avatar" src="assets/photos/julian.webp" alt="Julian Schrittwieser"><div class="meta"><span class="name">Julian Schrittwieser</span><span class="aff">Anthropic</span><span class="summary">73K+ citations. Built AlphaGo, AlphaZero, Atari, Gemini, and Claude, etc.</span></div></div>
-            <div class="person"><img class="avatar" src="assets/photos/richard.jpg" alt="Richard Socher"><div class="meta"><span class="name">Richard Socher</span><span class="aff">You.com</span><span class="summary">230K+ citations. Known for work behind ImageNet, GloVe, recursive nets, and more; former Chief Scientist at Salesforce, now CEO of You.com.</span></div></div>
-            <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span><span class="summary">23K+ citations. Ex. Director of Meta FAIR, working on post-training, now co-founding a stealth startup, and also writing sci-fi.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/julian.webp" alt="Julian Schrittwieser"><div class="meta"><span class="name">Julian Schrittwieser</span><span class="aff">Anthropic</span><span class="summary">Built AlphaGo, AlphaZero, Atari, Gemini, and Claude, etc. 73K+ citations.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/richard.jpg" alt="Richard Socher"><div class="meta"><span class="name">Richard Socher</span><span class="aff">You.com</span><span class="summary">Known for work behind ImageNet, GloVe, recursive nets, and more; former Chief Scientist at Salesforce, now CEO of You.com. 230K+ citations.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span><span class="summary">Ex. Director of Meta FAIR, working on post-training, now co-founding a stealth startup, and also writing sci-fi. 23K+ citations.</span></div></div>
             <div class="person"><img class="avatar" src="assets/photos/matej.jpeg" alt="Matej Balog"><div class="meta"><span class="name">Matej Balog</span><span class="aff">DeepMind</span><span class="summary">Staff Research Scientist at DeepMind and lead of AlphaEvolve.</span></div></div>
-            <div class="person"><img class="avatar" src="assets/photos/yms.jpg" alt="Ming-Hsuan Yang"><div class="meta"><span class="name">Ming-Hsuan Yang</span><span class="aff">University of California at Merced, DeepMind</span><span class="summary">170K+ citations. One of the best-known names in computer vision.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/yms.jpg" alt="Ming-Hsuan Yang"><div class="meta"><span class="name">Ming-Hsuan Yang</span><span class="aff">University of California at Merced, DeepMind</span><span class="summary">One of the best-known names in computer vision. 170K+ citations.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/vladlen.jpg" alt="Vladlen Koltun"><div class="meta"><span class="name">Vladlen Koltun</span><span class="aff">Apple</span><span class="summary">Distinguished Scientist at Apple, known for CARLA and simulation-driven autonomy research. 120K+ citations.</span></div></div>
           </div>
           <div class="people-grid moderator-grid super-panel-moderator">
             <div class="person"><img class="avatar" src="assets/photos/js.jpg" alt="Jürgen Schmidhuber"><div class="meta"><span class="role">Moderator</span><span class="name">Jürgen Schmidhuber</span><span class="aff">KAUST / IDSIA</span><span class="summary">Introduced basics of: meta-learning &amp; RSI, P&amp;T in ChatGPT, neural distillation, very deep learning, GANs &amp; modern world models, etc. Co-authored most cited AI paper of 20th century.</span></div></div>
