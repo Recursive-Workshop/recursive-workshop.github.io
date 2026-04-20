@@ -340,15 +340,67 @@
     .panel-grid.two-row .person {
       flex: none;
     }
+    .panel-layout.super-stars-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      overflow: visible;
+      padding-bottom: 0;
+    }
     .panel-grid.super-stars-grid {
       display: grid;
-      grid-template-columns: repeat(5, 150px);
+      grid-template-columns: repeat(4, 150px);
       column-gap: 24px;
       row-gap: 24px;
       width: auto;
     }
     .panel-grid.super-stars-grid .person {
+      width: 150px;
       flex: none;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+    }
+    .panel-grid.super-stars-grid .meta,
+    .super-panel-moderator .meta {
+      gap: 3px;
+    }
+    .panel-grid.super-stars-grid .name,
+    .super-panel-moderator .name {
+      font-size: 17px;
+      letter-spacing: -0.2px;
+      min-height: 2.4em;
+    }
+    .panel-grid.super-stars-grid .aff,
+    .super-panel-moderator .aff {
+      font-size: 13px;
+      color: var(--muted);
+      min-height: 2.2em;
+    }
+    .panel-grid.super-stars-grid .summary,
+    .super-panel-moderator .summary {
+      display: block;
+      position: relative;
+      margin-top: 6px;
+      padding-left: 14px;
+      border-left: 2px solid rgba(163, 86, 44, 0.35);
+      color: #6a4a31;
+      font-size: 12.5px;
+      line-height: 1.45;
+      text-align: left;
+      letter-spacing: -0.01em;
+    }
+    .panel-grid.super-stars-grid .summary::before,
+    .super-panel-moderator .summary::before {
+      content: "“";
+      position: absolute;
+      left: 4px;
+      top: -2px;
+      color: #b26a3b;
+      font-size: 16px;
+      font-weight: 700;
     }
     .moderator-grid {
       display: flex;
@@ -440,6 +492,13 @@
         width: auto;
         flex: none;
       }
+      .panel-grid.super-stars-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+      }
+      .panel-grid.super-stars-grid .person {
+        width: auto;
+      }
       .moderator-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -460,6 +519,9 @@
     }
     @media (max-width: 760px) {
       .panel-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .panel-grid.super-stars-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -723,7 +785,7 @@
             <tr>
               <td class="time">13:10 - 14:00</td>
               <td>Super Stars Panel</td>
-              <td>Julian Schrittwieser, Sergey Levine, Yuandong Tian, TBD, TBD; Moderator: Jürgen Schmidhuber</td>
+              <td>Julian Schrittwieser, Richard Socher, Yuandong Tian, Matej Balog, Ming-Hsuan Yang, TBD; Moderator: Jürgen Schmidhuber</td>
             </tr>
             <tr>
               <td class="time">14:00 - 14:30</td>
@@ -793,18 +855,16 @@
       <h3>Panelists</h3>
       <div class="people-block">
         <h4>Super Stars Panel <span class="subtle">(1:10 PM - 2:00 PM)</span></h4>
-        <div class="panel-layout">
+        <div class="panel-layout super-stars-layout">
           <div class="people-grid panel-grid super-stars-grid">
-            <div class="person"><img class="avatar" src="assets/photos/julian.webp" alt="Julian Schrittwieser"><div class="meta"><span class="name">Julian Schrittwieser</span><span class="aff">Anthropic</span></div></div>
-            <div class="person"><img class="avatar" src="assets/photos/sergey.webp" alt="Sergey Levine"><div class="meta"><span class="name">Sergey Levine</span><span class="aff">UC Berkeley, Physical Intelligence</span></div></div>
-            <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span></div></div>
-            <div class="person"><img class="avatar" src="assets/photos/matej.jpeg" alt="Matej Balog"><div class="meta"><span class="name">Matej Balog</span><span class="aff">DeepMind</span></div></div>
-            <div class="person"><img class="avatar" src="assets/photos/yms.jpg" alt="Ming-Hsuan Yang"><div class="meta"><span class="name">Ming-Hsuan Yang</span><span class="aff">University of California at Merced, DeepMind</span></div></div>
-            <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
-            <div class="person"><div class="avatar avatar-placeholder" aria-hidden="true">TBD</div><div class="meta"><span class="name">TBD</span><span class="aff">To be announced</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/julian.webp" alt="Julian Schrittwieser"><div class="meta"><span class="name">Julian Schrittwieser</span><span class="aff">Anthropic</span><span class="summary">73K+ citations. Built AlphaGo, AlphaZero, Atari, Gemini, and Claude, etc.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/richard.jpg" alt="Richard Socher"><div class="meta"><span class="name">Richard Socher</span><span class="aff">You.com</span><span class="summary">230K+ citations. Known for work behind ImageNet, GloVe, recursive nets, and more; former Chief Scientist at Salesforce, now CEO of You.com.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/yd.png" alt="Yuandong Tian"><div class="meta"><span class="name">Yuandong Tian</span><span class="aff">Stealth Startup</span><span class="summary">23K+ citations. Ex. Director of Meta FAIR, working on post-training, now co-founding a stealth startup, and also writing sci-fi.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/matej.jpeg" alt="Matej Balog"><div class="meta"><span class="name">Matej Balog</span><span class="aff">DeepMind</span><span class="summary">Staff Research Scientist at DeepMind and lead of AlphaEvolve.</span></div></div>
+            <div class="person"><img class="avatar" src="assets/photos/yms.jpg" alt="Ming-Hsuan Yang"><div class="meta"><span class="name">Ming-Hsuan Yang</span><span class="aff">University of California at Merced, DeepMind</span><span class="summary">170K+ citations. One of the best-known names in computer vision.</span></div></div>
           </div>
-          <div class="people-grid moderator-grid">
-            <div class="person"><img class="avatar" src="assets/photos/js.jpg" alt="Jürgen Schmidhuber"><div class="meta"><span class="role">Moderator</span><span class="name">Jürgen Schmidhuber</span><span class="aff">KAUST / IDSIA</span></div></div>
+          <div class="people-grid moderator-grid super-panel-moderator">
+            <div class="person"><img class="avatar" src="assets/photos/js.jpg" alt="Jürgen Schmidhuber"><div class="meta"><span class="role">Moderator</span><span class="name">Jürgen Schmidhuber</span><span class="aff">KAUST / IDSIA</span><span class="summary">Introduced basics of: meta-learning &amp; RSI, P&amp;T in ChatGPT, neural distillation, very deep learning, GANs &amp; modern world models, etc. Co-authored most cited AI paper of 20th century.</span></div></div>
           </div>
         </div>
       </div>
